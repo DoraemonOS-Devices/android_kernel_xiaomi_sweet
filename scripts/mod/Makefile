@@ -1,3 +1,8 @@
+# Disable unused-command-line-argument
+ifeq ($(cc-name),clang)
+EXTRA_CFLAGS += $(call cc-disable-warning, unused-command-line-argument)
+endif
+
 # SPDX-License-Identifier: GPL-2.0
 OBJECT_FILES_NON_STANDARD := y
 CFLAGS_empty.o += $(DISABLE_LTO)
